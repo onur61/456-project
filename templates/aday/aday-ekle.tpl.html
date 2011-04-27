@@ -1,0 +1,62 @@
+{include file="header.tpl.html" title=$title}
+
+<center>
+<h2> Add Applicant Profile </h2>
+<form action="/cs/action/aday/aday-ekle.php" method = "post" id="form" name = "form" enctype="multipart/form-data">
+<table border=0>
+<tr><td >Ad:</td><td>&nbsp;&nbsp;<input type="text" name="name" id="name"  size="30" maxlength="64" value=""/></td></tr>
+<tr><td>Soyad: </td><td>&nbsp;&nbsp;<input type="text" name="surname" id="surname"  size="30" maxlength="64" value=""/></td></tr>
+<tr>
+  <td>Tc No:</td>
+  <td>&nbsp;&nbsp;<input type="text" name="tcNo" id="tcNO"  size="30" maxlength="11" value=""/></td></tr>
+<tr><td>Pozisyon</td><td>&nbsp;&nbsp;<select name=position>
+{html_options values=$option_id output=$option_value}
+</select></td></tr>  
+ 
+<tr>
+<td>Doðum Tarihi:</td><td>&nbsp;
+<select name=day>{html_options values=$did  output=$did}</select>
+<select name=month>{html_options values=$mid  output=$months}</select>
+<select name=year>{html_options values=$yid  output=$yid}</select></td></tr>
+
+<tr><td>Cinsiyet:</td><td>&nbsp;&nbsp;<input type="radio"  name="gender" value="M" checked />Male<input type="radio" name="gender" value="F"/>Female</td></tr>
+<tr>
+  <td>Telefon No:</td>
+  <td>&nbsp;&nbsp;<input type="text" name="telNo" id="telNo"  size="20" maxlength="12" value=""/></td></tr>
+  <tr>
+  <td>Cep Telefonu:</td>
+  <td>&nbsp;&nbsp;<input type="text" name="cellNo" id="cellNo"  size="20" maxlength="12" value=""/></td></tr>
+  <tr>
+  <td>E-posta:</td>
+  <td>&nbsp;&nbsp;<input type="text" name="email" id="email"  size="20" maxlength="100" value=""/></td></tr>
+  <tr>
+  <td>Sehir:</td>
+  <td>&nbsp;&nbsp;<input type="text" name="city" id="city"  size="30" maxlength="30" value=""/></td></tr>
+  <tr>
+  <td>Askerlik Durum:</td>
+  <td>&nbsp;&nbsp;<select name="army_status">
+  <option>Askerlik Durumu</option>
+  <option value="yapýlmýþ">Tamamlanmýþ</option>
+  <option value="muaf">Muaf</option>
+  <option value="yapýlmamýþ">Yapýlmamýþ</option>
+  <option value="ertelenmiþ">Ertelenmiþ</option>
+</select></td></tr><tr>
+  <td>Medeni Durum:</td>
+  <td>&nbsp;&nbsp;<select name="marriage_status">
+  <option>Medeni Durum</option>
+  <option value="evli">Evli</option>
+  <option value="niþanlý">Niþanlý</option>
+  <option value="bekar">Bekar</option>
+</select></td></tr>
+<tr>
+  <td>CV:</td>
+  <td>&nbsp;
+<input name="cv" type="file" />
+ 
+</td></tr>
+  
+<tr><td colspan="2" align="center"><input type="submit" name="register" value=" Add Applicant "/></td> </tr>
+
+</form>
+
+{include file="footer.tpl.html"}

@@ -1,0 +1,36 @@
+{include file="header.tpl.html" title=$title}
+
+<center>
+<h2> {$title} </h2>
+<form action="/cybersoft/action/kullanici/kullanici-ekle.php" method="post" id="form" enctype = "multipart/form-data">
+<table border="0">
+<tr><td >Ad:</td><td>&nbsp;&nbsp;<input type="text" name="uname" id="uname"  size="30" maxlength="64" value=""/></td></tr>
+<tr><td>Soyad: </td><td>&nbsp;&nbsp;<input type="text" name="usurname" id="usurname"  size="30" maxlength="64" value=""/></td></tr>
+<tr>
+  <td>E-posta:</td>
+  <td>&nbsp;&nbsp;<input type="text" name="uemail" id="uemail"  size="30" maxlength="100" value=""/></td></tr>
+<tr>
+  <td>Þifre:</td>
+  <td>&nbsp;&nbsp;<input type="password" name="password" id="password"  size="30" maxlength="12" value=""/></td></tr>
+  <tr>
+  <td>Þifre Tekrar:</td>
+  <td>&nbsp;&nbsp;<input type="password" name="password1" id="password"  size="30" maxlength="12" value=""/></td></tr>
+  
+  <tr>
+  <td>Kullanýcý Tipi:</td>
+  <td>&nbsp;&nbsp;<select name="type">
+  <option>Kullanýcý Tipi Seç</option>
+  <option value="1">Yönetici</option>
+  <option value="2">Teknik</option>
+  <option value="3">Sekreter</option>
+  
+</select></td></tr>
+ <br><br> 
+<tr><td colspan="2" align="center"><input type="submit" name="register" value=" Kullanýcý Ekle "/></td> </tr>
+</table>
+
+</form>
+</center>
+
+
+{include file="footer.tpl.html"}

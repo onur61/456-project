@@ -1,0 +1,22 @@
+{include file="header.tpl.html" title=$title}
+
+<center>
+{foreach $announcements as $announcement}
+<h2> {$title} </h2>
+<form action="/cs/action/ilan/ilan-duzenle.php" method="post" id="form" enctype = "multipart/form-data">
+<table border="0">
+<tr><td >Baþlýk:</td><td>&nbsp;&nbsp;<input type="text" name="title" id="title"  size="30" maxlength="64" value="{$announcement.title|capitalize}"/></td></tr>
+<tr><td>Pozisyon: </td><td>&nbsp;&nbsp;<input type="text" name="position" id="position"  size="30" maxlength="64" value="{$announcement.position|capitalize}"/></td></tr>
+<tr>
+  <td>Taným:</td>
+  <td>&nbsp;&nbsp;<textarea name="description" id="description" rows="5" cols="50" value=""/>{$announcement.description}</textarea></td></tr>
+ <tr></tr><td><input type="hidden" name="id" value="{$announcement.announcementID}"></a></td></tr>
+<tr><td colspan="2" align="center"><input type="submit" name="register" value=" Kullanýcý Ekle "/></td> </tr>
+</table>
+
+</form>
+{/foreach}
+</center>
+
+
+{include file="footer.tpl.html"}

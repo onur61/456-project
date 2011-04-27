@@ -1,0 +1,34 @@
+{include file="header.tpl.html" title=$title}
+
+<center>
+  {foreach $users as $user}
+
+<h2> {$title} </h2>
+<form action="//cybersoft/action/kullanici/kullanici-sil.php" method="post" id="form" enctype = "multipart/form-data">
+<table border="0">
+<tr><td >Ad:</td><td>&nbsp;&nbsp;{$user.uname}</td></tr>
+<tr><td>Soyad: </td><td>&nbsp;&nbsp;{$user.usurname}</td></tr>
+<tr>
+  <td>E-posta:</td>
+  <td>&nbsp;&nbsp;{$user.uemail}</td></tr>
+  
+  <tr>
+  <td>Kullanýcý Tipi:</td>
+  <td>&nbsp;&nbsp;<select name="type">
+  <option>Kullanýcý Tipi Seç</option>
+  <option value="1">Yönetici</option>
+  <option value="2">Teknik</option>
+  <option value="3">Sekreter</option>
+  
+</select></td></tr>
+<td><input type="hidden" name="id" value="{$user.userID}"></a></td>
+ <br><br> 
+<tr><td colspan="2" align="center"><input type="submit" name="register" value=" Sil "/></td> </tr>
+</table>
+
+</form>
+{/foreach}
+</center>
+
+
+{include file="footer.tpl.html"}

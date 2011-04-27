@@ -1,0 +1,14 @@
+{include file="header.tpl.html" title=$title}
+
+An itibariyle {$smarty.now|date_format:"%Y-%m-%d %H:%M:%S"}
+
+The value of {ldelim}$name{rdelim} is <b>{$name}</b>
+
+variable modifier example of {ldelim}$name|upper{rdelim}
+
+<b>{$name|upper}</b>
+
+
+<p> {$context}</p>
+
+{include file="footer.tpl.html"}

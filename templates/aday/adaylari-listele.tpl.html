@@ -1,0 +1,31 @@
+{include file="header.tpl.html" title=$title}
+<a href="/cs/action/logout.php">Log out</a>
+<div style="background:#fff; padding: 10px">
+				<h1>{$count}</h1>
+                  
+                    {foreach $applicants as $applicant}
+                   
+					Ad : {$applicant.name} &#09; Soyad: {$applicant.surname}  TC No: {$applicant.tcNo} Cinsiyet: {$applicant.gender}<br>
+					Dogum Tarihi : {$applicant.birth_date} e-posta: {$applicant.email}	Sehir: {$applicant.city}<br>
+					Telefon: {$applicant.telephone_no} Cep Tel: {$applicant.cell_no}<br>
+					Askeri durum: {$applicant.army_status}	Medeni Hal: {$applicant.marriage_status}<br>
+					pozisyon : {$applicant.position} cv: <a href="/cs/upload/{$applicant.cv}">{$applicant.cv}</a><br>
+				   <td><a href="/cs/aday-duzenle.php?id={$applicant.applicantId}">Düzenle</a></td>
+                   <td><a href="/cs/aday-sil.php?id={$applicant.applicantId}">Sil</a></td>
+                   <td><a href="/cs/gorusme-ayarla.php?id={$applicant.applicantId}">Gorusme Ayarla</a></td>
+                        
+					<hr></hr>
+					
+                     
+	                    {/foreach}
+						
+ 
+
+                    </tbody>
+                  </table>
+                </div>
+{if $count gt 10}
+{$first}{$links}{$last}
+{/if}
+
+{include file="footer.tpl.html"}

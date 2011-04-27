@@ -1,0 +1,43 @@
+{include file="header.tpl.html" title=$title}
+<a href="/cs/action/logout.php">Log out</a>
+<div style="background:#fff; padding: 10px">
+				<h1>{$count}</h1>
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0" id="YonetimKullaniciAnasayfa">
+                    <tbody>
+                      <tr>
+                        <td height="40" colspan="6"><strong style=" font-size: 14px; font-weight: bold; margin-left: 4px;">Kullanýcýlar</strong></td>
+                      </tr>
+                      <tr>
+                        <td align="left" class="yonetim-td-top"><span class="ustTitle">Ad</span></td>
+                        <td align="left" class="yonetim-td-top"><span class="ustTitle">Soyad</span></td>
+                        <td align="left" class="yonetim-td-top"><span class="ustTitle">E-posta</span></td>
+                        <td align="left" class="yonetim-td-top"><span class="ustTitle">Kullanýcý Tipi</span></td>
+
+                      </tr>
+                    {foreach $users as $user}
+                      
+                          <tr>
+                       <!-- <td valign="bottom" height="40" align="left" style="color: rgb(10, 53, 172);" class="tarihTablo"><a href="{$usersettingsAdminLink}"  style="font-size: 11px; font-weight: normal;"> {$user.user_id} </a></td>-->
+                        <td valign="bottom" height="40" align="left" style="color: rgb(10, 53, 172);" class="tarihTablo"> {$user.uname|capitalize} </a></td>
+                        <td valign="bottom" height="40" align="left" style="color: rgb(10, 53, 172);" class="tarihTablo"> {$user.usurname|capitalize} </a></td>
+                        <td valign="bottom" height="40" align="left" style="color: rgb(10, 53, 172);" class="tarihTablo"> {$user.uemail} </a></td>
+                        <td valign="bottom" height="40" align="left" style="color: rgb(10, 53, 172);" class="tarihTablo"> {$user.type} </a></td>
+                        <td><a href="/cs/kullanici-duzenle.php?id={$user.userID}">Düzenle</a></td>
+                        <td><a href="/cs/kullanici-sil.php?id={$user.userID}">Sil</a></td>
+                         <td valign="bottom" height="40" align="left" style="color: rgb(10, 53, 172);" class="tarihTablo"><input type="hidden" name="id" value="{$user.userID}"></a></td>
+                      </tr>
+                     
+	                    {/foreach}
+						
+ 
+
+                    </tbody>
+                  </table>
+                </div>
+
+{if $count gt 10}
+{$first}{$links}{$last}
+{/if}
+
+
+{include file="footer.tpl.html"}

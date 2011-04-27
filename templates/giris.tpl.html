@@ -1,0 +1,18 @@
+{include file="header.tpl.html" title=$title}
+
+
+<center>
+<h2> {$title} </h2>
+<form action="/cs/action/giris.php" method="post" id="form" enctype = "multipart/form-data">
+<table border="0">
+<tr><td >E-posta:</td><td>&nbsp;&nbsp; <INPUT id="username" name="uemail"  type="text"  /></td></tr>
+<tr><td>Sifre: </td><td>&nbsp;&nbsp;<INPUT id="password" name="password"  type="password"  /></td></tr>
+ 
+<tr><td colspan="2" align="center"><input type="submit" name="register" value=" Giris "/></td> </tr>
+</table>
+
+</form>
+</center>
+
+
+{include file="footer.tpl.html"}

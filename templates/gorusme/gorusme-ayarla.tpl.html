@@ -1,0 +1,33 @@
+{include file="header.tpl.html" title=$title}
+
+<center>
+{foreach $applicants as $applicant}
+<h2> {$applicant.name}&nbsp;&nbsp;{$applicant.surname} icin gorusme ayarla </h2>
+<form action="/cs/action/gorusme/gorusme-ayarla.php" method="post" id="form" enctype = "multipart/form-data">
+<table border="0">
+<td>Yer:</td>
+  <td>&nbsp;&nbsp;<select name="place">
+  <option>yer</option>
+  <option value="istanbul">Istanbul</option>
+  <option value="ankara">Ankara</option>
+  
+</select></td></tr>
+<td> Tarih:</td><td>&nbsp;
+<select name=day>{html_options values=$did  output=$did}</select>
+<select name=month>{html_options values=$mid  output=$months}</select>
+<select name=year>{html_options values=$yid  output=$yid}</select></td></tr>
+<tr><td>Zaman: </td><td>&nbsp;<select name=hour>{html_options values=$hours  output=$hours}</select>
+<select name=minute>{html_options values=$minutes  output=$minutes}</select></td></tr>
+<tr>
+  <td>Gorusecek kisi:</td>
+  <td>&nbsp;&nbsp;<input type="text" name="person" id="person"  size="30" maxlength="64" value=""/></td></tr>
+  <tr></tr><td><input type="hidden" name="id" value="{$applicant.applicantId}"></td></tr>
+<tr><td colspan="2" align="center"><input type="submit" name="register" value=" Gorusme Ayarla "/></td> </tr>
+</table>
+
+</form>
+{/foreach}
+</center>
+
+
+{include file="footer.tpl.html"}
